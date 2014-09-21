@@ -1,0 +1,14 @@
+import java.awt.*;
+import java.awt.event.*;
+
+import com.golden.gamedev.*;
+import com.golden.gamedev.object.*;
+
+public class Shapez extends Sprite
+{
+
+    public Shapez(java.awt.image.BufferedImage image, int xLocation, int yLocation)
+	{
+	    super(image, xLocation, yLocation);
+	}
+}
