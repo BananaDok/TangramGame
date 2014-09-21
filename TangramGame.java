@@ -78,29 +78,29 @@ public class TangramGame extends Game
 
     public void update(long elapsedTime)
     {
+	//how do we make thi loop work??
 
-	//this loop does not grab the next shape in the arrayList
-
-  	for(int i = 0; i < arr.size(); i++)
-	{
-	    current_shape = arr.get(i);
+	while(arr.size() > 0 /*there are still objects in the array list*/)
+	    {
+		current_shape = arr.get(0);
 	
-	    current_shape.setLocation(getMouseX(), getMouseY());
+		current_shape.setLocation(getMouseX(), getMouseY());
 
 
-	    if(click() && first_click)
+		if(click() && first_click)
 		    {  
-			current_shape = arr.remove(i);
+			current_shape = arr.remove(0);
 			first_click = false;
 		    }
-	    if(bsInput.isMouseReleased(0))
+		if(bsInput.isMouseReleased(0))
 		    {
 			first_click = true;
 		    }
+		SHAPE_GROUP.update(elapsedTime);
+	    }
 
-         }
 
-	    SHAPE_GROUP.update(elapsedTime);
+	// SHAPE_GROUP.update(elapsedTime);
 	
 
     	
