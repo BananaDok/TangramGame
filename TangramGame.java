@@ -20,6 +20,8 @@ public class TangramGame extends Game
 
      boolean first_click = true;
 
+    long rotateTime = 0;
+
     //would an array work better than an array list?
     ArrayList<Shapez> arr = new ArrayList<Shapez>();
     
@@ -78,12 +80,10 @@ public class TangramGame extends Game
 
     public void update(long elapsedTime)
     {
-	//how do we make thi loop work??
 
-
-
-		while(arr.size() > 0 /*there are still objects in the array list*/)
+		if(arr.size() > 0 /*there are still objects in the array list*/)
 		     {
+	        
 	       		current_shape = arr.get(0);
 	
 			current_shape.setLocation(getMouseX(), getMouseY());
@@ -96,27 +96,32 @@ public class TangramGame extends Game
 				first_click = false;
 			    }
 
-			if(bsInput.isMouseReleased(0))
+			if(bsInput.isMouseReleased(1))
 			    {
+				System.out.println("resetting first click");
 				first_click = true;
-				current_shape = arr.remove(0);
 			    }
-			
-        
-		     }
+			//where should this statement go?? what does it do??	
+			SHAPE_GROUP.update(elapsedTime);
+				     }
 
 
-	SHAPE_GROUP.update(elapsedTime);
+
 	
-
+	
     	
+	//Here, we want to rotate current_shape with the down-arrow key
+	//How can we make it so that it does not rotate a million times per down key?
+		//
+		//
 
-	// if(keyDown(KeyEvent.VK_DOWN))
-	//     {
-	// 	//rotate sprite 45 degrees
-	// 	//suggested code from StackOverflow.com
-	//      //current_shape.setRotation(1.5);
-	//     }
+		// rotateTime = elapsedTime;
+		if(keyDown(KeyEvent.VK_DOWN) /*&& elapsedTime >= 500*/)
+	    {
+		//rotate sprite 45 degrees
+		current_shape.rotate();
+	       	//rotateTime = 0;
+	    }
 
 	
 
