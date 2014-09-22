@@ -4,6 +4,8 @@ import java.awt.event.*;
 import com.golden.gamedev.*;
 import com.golden.gamedev.object.*;
 
+import com.golden.gamedev.util.*;
+
 public class Shapez extends Sprite
 {
     double movementSpeed = 0;
@@ -18,5 +20,11 @@ public class Shapez extends Sprite
     public void setMovementSpeed(double newSpeed)
     {
 	movementSpeed = newSpeed; 
+    }
+
+    public void rotate()
+    {
+	java.awt.image.BufferedImage rotatedImage = ImageUtil.rotate(getImage(), 45);
+	setImage(rotatedImage);
     }
 }
