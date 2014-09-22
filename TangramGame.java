@@ -18,7 +18,7 @@ public class TangramGame extends Game
     
     SpriteGroup SHAPE_GROUP;
 
-    boolean first_click = true;
+     boolean first_click = true;
 
     //would an array work better than an array list?
     ArrayList<Shapez> arr = new ArrayList<Shapez>();
@@ -80,27 +80,33 @@ public class TangramGame extends Game
     {
 	//how do we make thi loop work??
 
-	while(arr.size() > 0 /*there are still objects in the array list*/)
-	    {
-		current_shape = arr.get(0);
+
+
+		while(arr.size() > 0 /*there are still objects in the array list*/)
+		     {
+	       		current_shape = arr.get(0);
 	
-		current_shape.setLocation(getMouseX(), getMouseY());
+			current_shape.setLocation(getMouseX(), getMouseY());
 
 
-		if(click() && first_click)
-		    {  
-			current_shape = arr.remove(0);
-			first_click = false;
-		    }
-		if(bsInput.isMouseReleased(0))
-		    {
-			first_click = true;
-		    }
-		SHAPE_GROUP.update(elapsedTime);
-	    }
+			if(click() && first_click)
+			    {  
+				System.out.println("yay");
+				current_shape = arr.remove(0);
+				first_click = false;
+			    }
+
+			if(bsInput.isMouseReleased(0))
+			    {
+				first_click = true;
+				current_shape = arr.remove(0);
+			    }
+			
+        
+		     }
 
 
-	// SHAPE_GROUP.update(elapsedTime);
+	SHAPE_GROUP.update(elapsedTime);
 	
 
     	
