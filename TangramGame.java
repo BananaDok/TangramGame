@@ -4,6 +4,8 @@ import java.awt.event.*;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
 
+import java.lang.InterruptedException;
+
 
 import com.golden.gamedev.*;
 import com.golden.gamedev.object.*;
@@ -81,6 +83,7 @@ public class TangramGame extends Game
     public void update(long elapsedTime)
     {
 
+
 		if(arr.size() > 0 /*there are still objects in the array list*/)
 		     {
 	        
@@ -107,16 +110,25 @@ public class TangramGame extends Game
 	
 	//
 	//Here, we want to rotate current_shape with the down-arrow key
-	//How can we make it so that it does not rotate a million times per down key?
-        //
        	//
 		// rotateTime = elapsedTime;
 		if(keyDown(KeyEvent.VK_DOWN) /*&& elapsedTime >= 500*/)
-	    {
-		//rotate sprite 45 degrees
-		current_shape.rotate();
-	       	//rotateTime = 0;
-	    }
+		    {
+			//got sleep code from StackOverflow.com
+			try
+			    {
+				//rotate sprite 45 degrees
+				current_shape.rotate();
+				Thread.sleep(75);    
+			    } 
+			catch(InterruptedException ex)
+			    {
+				Thread.currentThread().interrupt();
+			    }
+
+
+		    }
+
 
      }
 
