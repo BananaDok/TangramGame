@@ -104,17 +104,12 @@ public class TangramGame extends Game
 			//where should this statement go?? what does it do??	
 			SHAPE_GROUP.update(elapsedTime);
 				     }
-
-
-
 	
-	
-    	
+	//
 	//Here, we want to rotate current_shape with the down-arrow key
 	//How can we make it so that it does not rotate a million times per down key?
-		//
-		//
-
+        //
+       	//
 		// rotateTime = elapsedTime;
 		if(keyDown(KeyEvent.VK_DOWN) /*&& elapsedTime >= 500*/)
 	    {
@@ -123,10 +118,9 @@ public class TangramGame extends Game
 	       	//rotateTime = 0;
 	    }
 
-	
-
-
      }
+
+
     
     public void render(Graphics2D g)
     {
