@@ -31,32 +31,32 @@ public class TangramGame extends Game
     public void initResources()
     {
 
-	Shapez greenTriangle = new Shapez(getImage("GreTri.png"), 710, 300);
+	Shapez greenTriangle = new Shapez(getImage("GreTri.png"), 100, 300);
 	//add to array list
 	arr.add(greenTriangle);
 
-	Shapez blueTrapezoid = new Shapez(getImage("BluTra.png"), 710, 300);
+	Shapez blueTrapezoid = new Shapez(getImage("BluTra.png"), 100, 300);
 	//add to array list
 	arr.add(blueTrapezoid);
 
-	Shapez purpleTriangle = new Shapez(getImage("PurTri.png"), 710, 300);
+	Shapez purpleTriangle = new Shapez(getImage("PurTri.png"), 100, 300);
 	//add to array list
 	arr.add(purpleTriangle);
 
-	Shapez redTriangle = new Shapez(getImage("RedTri.png"), 710, 300);
+	Shapez redTriangle = new Shapez(getImage("RedTri.png"), 100, 300);
 	//add to array list
 	arr.add(redTriangle);
 
-	Shapez orangeTriangle = new Shapez(getImage("OraTri.png"), 710, 300);
+	Shapez orangeTriangle = new Shapez(getImage("OraTri.png"), 100, 300);
 	//add to array list
 	arr.add(orangeTriangle);
 
-	Shapez yellowSquare = new Shapez(getImage("YelSqu.png"), 710, 300);
+	Shapez yellowSquare = new Shapez(getImage("YelSqu.png"), 100, 300);
 	//add to array list
 	arr.add(yellowSquare);
 
 
-	Shapez maroonTriangle = new Shapez(getImage("MarTri.png"), 710, 300);
+	Shapez maroonTriangle = new Shapez(getImage("MarTri.png"), 100, 300);
 	//add to array list
 	arr.add(maroonTriangle);
 
