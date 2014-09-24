@@ -27,4 +27,10 @@ public class Shapez extends Sprite
 	java.awt.image.BufferedImage rotatedImage = ImageUtil.rotate(getImage(), 45);
 	setImage(rotatedImage);
     }
+    
+    // public void hitSomething()
+    // {
+    // 	System.out.println("BOOM");
+    // }
+    
 }
